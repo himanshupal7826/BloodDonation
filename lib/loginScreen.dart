@@ -1,3 +1,4 @@
+import 'package:blood_donation/selectionscreen.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'package:get/get.dart';
@@ -116,7 +117,7 @@ class _loginScreenState extends State<loginScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomeScreen(),
+                          builder: (context) => Selectionscreen(),
                         ),
                       );
                     }

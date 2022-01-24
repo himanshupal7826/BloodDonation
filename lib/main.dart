@@ -1,8 +1,11 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'loginScreen.dart';
+// import 'selectionscreen.dart';
 
 void main() async {
   // Add these 2 lines
@@ -27,6 +30,7 @@ class MyApp extends StatelessWidget {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: loginScreen(),
+      // home: Selectionscreen(),
     );
   }
 }
@@ -46,8 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: const Text('Blood Donation'),
         ),
         body: const Center(
-          child: Text(
-              'Donate your Blood if you Can\n So the One Who need\nShould Be Strong'),
+          child: Text('Home Screen'),
         ),
         drawer: Drawer(
           child: ListView(
