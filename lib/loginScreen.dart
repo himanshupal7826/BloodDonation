@@ -117,7 +117,7 @@ class _loginScreenState extends State<loginScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Selectionscreen(),
+                          builder: (context) => HomeScreen(),
                         ),
                       );
                     }

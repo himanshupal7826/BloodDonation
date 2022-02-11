@@ -1,10 +1,13 @@
-// ignore_for_file: unnecessary_const
+// ignore_for_file: unnecessary_const, unused_label
 
+import 'package:blood_donation/map.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'loginScreen.dart';
+import 'user_details.dart';
+import 'Selectionscreen.dart';
 // import 'selectionscreen.dart';
 
 void main() async {
@@ -49,9 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: const Text('Blood Donation'),
         ),
-        body: const Center(
-          child: Text('Home Screen'),
-        ),
+        backgroundColor: Colors.redAccent[100],
         drawer: Drawer(
           child: ListView(
             children: <Widget>[
@@ -59,12 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 accountName: Text('Sourav Kumar'),
                 accountEmail: Text('Sourav@gmail.com'),
                 currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Text(
-                    'S',
-                    style: TextStyle(fontSize: 40.0),
-                  ),
-                ),
+                    backgroundColor: Colors.white,
+                    child: Text(
+                      'S',
+                      style: TextStyle(fontSize: 40.0),
+                    )),
               ),
               ListTile(
                 title: const Text('Home'),
@@ -94,6 +94,73 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).pop();
                 },
               ),
+            ],
+          ),
+        ),
+        body: Center(
+          child: GridView.extent(
+            primary: false,
+            padding: const EdgeInsets.all(16),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            maxCrossAxisExtent: 200.0,
+            children: <Widget>[
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Selectionscreen())),
+                  child: const Card(
+                      child: Center(
+                          child: Text(
+                    "Requests",
+                    style: TextStyle(fontSize: 20),
+                  )))),
+              GestureDetector(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BloodMap())),
+                  child: const Card(
+                      child: Center(
+                          child: Text(
+                    "Near Blood Banks",
+                    style: TextStyle(fontSize: 20),
+                  )))),
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => User())),
+                  child: const Card(
+                      child: Center(
+                          child: Text(
+                    "Add request",
+                    style: TextStyle(fontSize: 20),
+                  )))),
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => User())),
+                  child: Card(
+                      child: Center(
+                          child: Text(
+                    "Become a Donor",
+                    style: TextStyle(fontSize: 20),
+                  )))),
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => User())),
+                  child: Card(
+                      child: Center(
+                          child: Text(
+                    "Requested you",
+                    style: TextStyle(fontSize: 20),
+                  )))),
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => User())),
+                  child: Card(
+                      child: Center(
+                          child: Text(
+                    "Blood facts",
+                    style: TextStyle(fontSize: 20),
+                  )))),
             ],
           ),
         ));
